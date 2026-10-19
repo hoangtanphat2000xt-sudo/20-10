@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gửi Lê Nguyễn Gia Thư — Chúc Mừng Ngày Phụ Nữ Việt Nam 💕</title>
+  <!-- Google Fonts hỗ trợ đầy đủ tiếng Việt -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Canvas hiệu ứng cánh hoa rơi & lấp lánh -->
+  <canvas id="petal-canvas" aria-hidden="true"></canvas>
+
+  <!-- Nút điều khiển âm nhạc & tuỳ chỉnh nhanh ở góc trên -->
+  <div class="floating-controls">
+    <button id="music-toggle" class="icon-btn" title="Bật / Tắt giai điệu" aria-label="Bật hoặc tắt nhạc nền">
+      <span class="music-icon" id="music-icon">🎵</span>
+      <span class="btn-label" id="music-label">Giai điệu</span>
+    </button>
+    <button id="customize-toggle" class="icon-btn" title="Tuỳ chỉnh ngày & lời chúc" aria-label="Tuỳ chỉnh nội dung">
+      <span>✏️</span>
+      <span class="btn-label">Tuỳ chỉnh</span>
+    </button>
+  </div>
+
+  <!-- MÀN HÌNH MỞ ĐẦU: PHONG BÌ THƯ TÌNH -->
+  <section id="intro-screen" class="intro-screen">
+    <div class="intro-glow"></div>
+    <div class="envelope-wrapper" id="open-envelope-btn" role="button" tabindex="0" aria-label="Mở bức thư gửi Lê Nguyễn Gia Thư">
+      <div class="Floating-badge">✨ Món quà nhỏ dành riêng cho em ✨</div>
+      
+      <div class="envelope" id="envelope">
+        <div class="envelope-flap"></div>
+        <div class="envelope-pocket"></div>
+        <div class="envelope-letter-preview">
+          <p class="preview-to">Gửi người thương,</p>
+          <h2 class="preview-name">Lê Nguyễn Gia Thư</h2>
+          <p class="preview-date" id="envelope-date-badge">Ngày Phụ Nữ Việt Nam • 20/10</p>
+        </div>
+        <div class="wax-seal">
+          <span>❤</span>
+        </div>
+      </div>
+
+      <p class="tap-hint">Chạm vào phong thư để mở quà nhé 💌</p>
+    </div>
+  </section>
+
+  <!-- NỘI DUNG CHÍNH -->
+  <main id="main-content" class="main-content hidden">
+    <!-- HERO SECTION -->
+    <header class="hero-section">
+      <div class="date-pill" id="hero-date-pill">
+        <span class="sparkle">🌸</span>
+        <span id="display-occasion">Happy Vietnamese Women's Day • 20/10</span>
+        <span class="sparkle">🌸</span>
+      </div>
+
+      <p class="hero-subtitle">Gửi đến cô gái tuyệt vời nhất của tui</p>
+      <h1 class="hero-title" id="display-recipient">Lê Nguyễn Gia Thư</h1>
+
+      <p class="hero-lead" id="display-tagline">
+        Cảm ơn em vì đã xuất hiện, mang theo sự dịu dàng và nụ cười làm bừng sáng cả thế giới của anh.
+      </p>
+
+      <div class="hero-actions">
+        <button id="send-flowers-btn" class="primary-btn">
+          <span>💐 Tặng Thư ngàn đóa hoa</span>
+          <span class="flower-counter" id="flower-counter">0</span>
+        </button>
+        <a href="#love-letter-section" class="secondary-btn">Đọc tâm thư 💌</a>
+      </div>
+    </header>
+
+    <!-- BỨC THƯ TÌNH -->
+    <section id="love-letter-section" class="section-container">
+      <div class="letter-card">
+        <div class="letter-decor-top">
+          <span>🌷</span>
+          <span class="letter-line"></span>
+          <span id="letter-date-label">Ngày 20 tháng 10</span>
+          <span class="letter-line"></span>
+          <span>🌷</span>
+        </div>
+
+        <h2 class="letter-greeting">Gia Thư thương mến,</h2>
+
+        <div class="letter-body" id="letter-body">
+          <p>
+            Nhân ngày Phụ nữ Việt Nam, tui muốn dành một góc nhỏ đặc biệt này chỉ để nói rằng:
+            <strong>Cảm ơn Lê Nguyễn Gia Thư</strong> vì đã luôn là chính em — một cô gái vừa xinh đẹp, ấm áp, lại vừa đáng yêu đến nhường này.
+          </p>
+          <p>
+            Chúc bồ của tui không chỉ riêng ngày hôm nay mà cả 365 ngày trong năm đều luôn rạng rỡ như những đóa hoa ban mai, luôn bình yên, hạnh phúc và được yêu thương thật nhiều.
+          </p>
+          <p>
+            Mọi muộn phiền ngoài kia cứ để tui lo, việc của Gia Thư là cứ mãi tươi cười và hạnh phúc bên tui thôi nhé!
+          </p>
+        </div>
+
+        <div class="letter-footer">
+          <div class="letter-stamp">
+            <div class="stamp-inner">100%<br/>Yêu Thương</div>
+          </div>
+          <div class="letter-signature">
+            <p class="sig-label">Mãi thương em,</p>
+            <p class="sig-name" id="display-sender">Bồ của Thư ❤️</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NHỮNG ĐIỀU ĐÁNG YÊU Ở GIA THƯ (CARDS LẬT / TƯƠNG TÁC) -->
+    <section class="section-container">
+      <div class="section-header">
+        <span class="section-tag">✨ Điều đặc biệt ✨</span>
+        <h2 class="section-title">Vì sao Gia Thư là duy nhất?</h2>
+        <p class="section-desc">Chạm vào từng tấm thẻ để mở lời nhắn nhỏ nha</p>
+      </div>
+
+      <div class="reasons-grid">
+        <div class="reason-card" tabindex="0">
+          <div class="reason-card-inner">
+            <div class="reason-front">
+              <span class="reason-emoji">☀️</span>
+              <h3>Nụ cười tỏa nắng</h3>
+              <span class="flip-hint">Chạm để mở →</span>
+            </div>
+            <div class="reason-back">
+              <p>Mỗi lần Gia Thư cười là bao nhiêu mệt mỏi trong ngày của tui đều tan biến hết sạch.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reason-card" tabindex="0">
+          <div class="reason-card-inner">
+            <div class="reason-front">
+              <span class="reason-emoji">🍓</span>
+              <h3>Sự dịu dàng & ấm áp</h3>
+              <span class="flip-hint">Chạm để mở →</span>
+            </div>
+            <div class="reason-back">
+              <p>Ở bên cạnh Thư lúc nào cũng có cảm giác bình yên, nhẹ nhàng mà chẳng nơi nào khác có được.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reason-card" tabindex="0">
+          <div class="reason-card-inner">
+            <div class="reason-front">
+              <span class="reason-emoji">👑</span>
+              <h3>Công chúa của riêng tui</h3>
+              <span class="flip-hint">Chạm để mở →</span>
+            </div>
+            <div class="reason-back">
+              <p>Dù thế giới ngoài kia có lớn thế nào, trong mắt tui thì Lê Nguyễn Gia Thư vẫn luôn là số 1!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LỌ SAO LỜI CHÚC NGẪU NHIÊN -->
+    <section class="section-container">
+      <div class="wish-jar-box">
+        <div class="jar-icon-wrap" id="jar-trigger">
+          <div class="jar-glow"></div>
+          <div class="jar-emoji">🏺✨</div>
+        </div>
+        <h3 class="jar-title">Lọ Sao Yêu Thương Của Gia Thư</h3>
+        <p class="jar-note" id="jar-note-text">
+          “Bấm nút bên dưới để rút một ngôi sao may mắn & lời nhắn ngọt ngào dành cho Thư nhé!”
+        </p>
+        <button id="draw-wish-btn" class="primary-btn jar-btn">
+          ⭐ Rút một ngôi sao cho Thư
+        </button>
+      </div>
+    </section>
+
+    <!-- GÓC CÂU HỎI ĐÁNG YÊU -->
+    <section class="section-container">
+      <div class="question-card">
+        <div class="question-badge">💞 Câu hỏi quan trọng nhất hôm nay</div>
+        <h2 class="question-title">Gia Thư có thương bồ nhiều hông? 🥰</h2>
+        <p class="question-sub">Trả lời thật lòng nha, cấm chọn sai đó!</p>
+
+        <div class="question-buttons" id="question-buttons-area">
+          <button id="yes-love-btn" class="yes-btn">Thương nhiều lắm luôn! 💖</button>
+          <button id="no-love-btn" class="no-btn">Hông thèm 😜</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>Được làm với tất cả tình yêu dành riêng cho <strong>Lê Nguyễn Gia Thư</strong> 💕</p>
+    </footer>
+  </main>
+
+  <!-- MODAL KHI BẤM "THƯƠNG NHIỀU LẮM LUÔN" -->
+  <div id="celebration-modal" class="modal-overlay hidden" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <div class="modal-big-heart">💖</div>
+      <h2 class="modal-title">Biết ngay mà! Yêu Gia Thư nhất trên đời!</h2>
+      <p class="modal-text">
+        Chúc cô gái mang tên <strong>Lê Nguyễn Gia Thư</strong> một ngày lễ thật trọn vẹn, ngập tràn hoa, quà và những cái ôm thật chặt từ tui nhé! 🥰💐
+      </p>
+      <button id="close-modal-btn" class="primary-btn">Ôm cái nào 🤗</button>
+    </div>
+  </div>
+
+  <!-- MODAL TUỲ CHỈNH NHANH (ĐỔI NGÀY 20/10 HOẶC 20/11 & LỜI CHÚC) -->
+  <div id="customize-modal" class="modal-overlay hidden" role="dialog" aria-modal="true">
+    <div class="modal-card customize-card">
+      <h3 class="customize-title">✨ Tuỳ chỉnh trang quà tặng</h3>
+      <p class="customize-sub">Bạn có thể đổi nhanh ngày lễ (20/10 hoặc 20/11) và chữ ký tại đây:</p>
+
+      <div class="form-group">
+        <label for="select-date-mode">Chọn hiển thị ngày lễ:</label>
+        <select id="select-date-mode">
+          <option value="20-10">20/10 — Ngày Phụ Nữ Việt Nam (Mặc định)</option>
+          <option value="20-11-women">20/11 — Ngày Phụ Nữ Việt Nam (Theo yêu cầu gốc)</option>
+          <option value="20-11-teacher">20/11 — Ngày Nhà Giáo Việt Nam</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="input-sender">Tên / chữ ký của bạn:</label>
+        <input type="text" id="input-sender" value="Bồ của Thư ❤️" placeholder="Nhập tên của bạn..." />
+      </div>
+
+      <div class="form-group">
+        <label for="input-custom-wish">Lời chúc trong thư (mỗi dòng là 1 đoạn):</label>
+        <textarea id="input-custom-wish" rows="5"></textarea>
+      </div>
+
+      <div class="customize-actions">
+        <button id="save-custom-btn" class="primary-btn">Lưu thay đổi 💖</button>
+        <button id="cancel-custom-btn" class="secondary-btn">Đóng</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
